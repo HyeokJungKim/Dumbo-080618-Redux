@@ -14,7 +14,7 @@ class App extends Component {
           <p>Harry Potter of Redux</p>
         </header>
         <WizardForm></WizardForm>
-        <WizardDisplay></WizardDisplay>
+        <WizardDisplay beef={"beeferoni"}></WizardDisplay>
       </div>
     );
   }

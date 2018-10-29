@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-
+import {connect} from 'react-redux'
+import {addWizard} from '../Redux/actioncreators'
 class WizardForm extends Component {
 
   state={
@@ -16,7 +17,8 @@ class WizardForm extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    console.log("Submitted!");
+    this.props.addWizard(this.state)
+
   }
 
   render() {
@@ -42,6 +44,40 @@ class WizardForm extends Component {
 
 }
 
+//Action is an object with type and payload
+
+//First argument for connect is mapStateToProps, second argument is mapDispatchToProps
+//First argument gets, second argument sets
+//First argument is a reader, second argument is a writers
+
+//The return value for this will also get merged as props
+// const mapDispatchToProps = (dispatch) => {
+//   return {
+//     addWizard: (wizard) => dispatch(addWizard(wizard))
+//   }
+// }
 
 
-export default WizardForm;
+
+
+
+
+
+export default connect(null, {addWizard})(WizardForm);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
